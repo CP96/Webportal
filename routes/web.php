@@ -19,3 +19,4 @@ Route::resource('skis', 'SkisController');
 Route::resource('snowboards', 'SnowboardsController');
 Route::resource('skiboots', 'SkibootsController');
 Route::resource('boots', 'BootsController');
+Route::resource('admin','AdminController');
