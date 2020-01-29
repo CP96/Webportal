@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Edit Boot
+    <h1>Edit Boot</h1>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -25,23 +25,23 @@
         @csrf
         <div class="form-group">
           <label for="brand">Brand:</label>
-          <input type="text" class="form-control" name="brand" value={{ $boot->brand }} />
+          <input type="text" class="form-control" name="brand" value="{{ $boot->brand }}" />
         </div>
         <div class="form-group">
           <label for="model">Model:</label>
-          <input type="text" class="form-control" name="model" value={{ $boot->model }} />
+          <input type="text" class="form-control" name="model" value="{{ $boot->model }}" />
         </div>
         <div class="form-group">
           <label for="type">Type:</label>
-          <input type="text" class="form-control" name="type" value={{ $boot->type }} />
+          <input type="text" class="form-control" name="type" value="{{ $boot->type }}" />
         </div>
         <div class="form-group">
           <label for="mondopoint">Mondo Ponit:</label>
-          <input type="text" class="form-control" name="mondopoint" value={{ $boot->mondopoint }} />
+          <input type="number" class="form-control" name="mondopoint" value="{{ $boot->mondopoint }}" />
         </div>
         <div class="form-group">
           <label for="rentalprice">Rental Price:</label>
-          <input type="text" class="form-control" name="rentalprice" value={{ $boot->rentalprice }} />
+          <input type="number" class="form-control" name="rentalprice" value="{{ $boot->rentalprice }}" />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>

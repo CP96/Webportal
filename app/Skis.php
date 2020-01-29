@@ -10,7 +10,7 @@ class Skis extends Model
         'brand',
         'model',
         'type',
-        'lenght',
+        'length',
         'rentalprice'
     ];
 }

@@ -15,11 +15,11 @@ class CreateSkibootsTable extends Migration
     {
         Schema::create('skiboots', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Brand');
-            $table->string('Model');
-            $table->string('Type');
-            $table->float('Mondo Point');
-            $table->float('Rental Price');
+            $table->string('brand');
+            $table->string('model');
+            $table->string('type');
+            $table->float('mondopoint');
+            $table->float('rentalprice');
             $table->timestamps();
         });
     }

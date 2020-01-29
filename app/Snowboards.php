@@ -10,7 +10,7 @@ class Snowboards extends Model
         'brand',
         'model',
         'type',
-        'lenght',
+        'length',
         'rentalprice'
     ];
 }

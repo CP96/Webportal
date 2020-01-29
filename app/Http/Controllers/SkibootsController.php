@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Skiboots;
 
 class SkibootsController extends Controller
 {
@@ -13,7 +14,9 @@ class SkibootsController extends Controller
      */
     public function index()
     {
-        //
+        $skiboots = Skiboots::all();
+
+        return view('skiboots.index', compact('skiboots'));
     }
 
     /**
@@ -23,7 +26,7 @@ class SkibootsController extends Controller
      */
     public function create()
     {
-        //
+        return view('skiboots.create');
     }
 
     /**
@@ -34,7 +37,22 @@ class SkibootsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'brand' => 'required|string',
+            'model' => 'required',
+            'type' => 'required',
+            'mondopoint' => 'required',
+            'rentalprice' => 'required'
+        ]);
+        $skiboot = new Skiboots([
+            'brand' => $request->get('brand'),
+            'model' => $request->get('model'),
+            'type' => $request->get('type'),
+            'mondopoint' => $request->get('mondopoint'),
+            'rentalprice' => $request->get('rentalprice')
+        ]);
+        $skiboot->save();
+        return redirect('/skiboots')->with('success', 'Skiboots has been added');
     }
 
     /**
@@ -56,7 +74,9 @@ class SkibootsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $skiboot = Skiboots::find($id);
+
+        return view('skiboots.edit', compact('skiboot'));
     }
 
     /**
@@ -68,7 +88,23 @@ class SkibootsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'brand' => 'required',
+            'model' => 'required',
+            'type' => 'required',
+            'mondopoint' => 'required',
+            'rentalprice' => 'required'
+        ]);
+
+        $skiboot = Skiboots::find($id);
+        $skiboot->brand = $request->get('brand');
+        $skiboot->model = $request->get('model');
+        $skiboot->type = $request->get('type');
+        $skiboot->mondopoint = $request->get('mondopoint');
+        $skiboot->rentalprice = $request->get('rentalprice');
+        $skiboot->save();
+
+        return redirect('/skiboots')->with('success', 'Skiboot has been updated');
     }
 
     /**
@@ -79,6 +115,9 @@ class SkibootsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skiboot = Skiboots::find($id);
+        $skiboot->delete();
+
+        return redirect('/skiboots')->with('success', 'Skiboot has been deleted Successfully');
     }
 }

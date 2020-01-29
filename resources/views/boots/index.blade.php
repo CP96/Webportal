@@ -6,6 +6,7 @@
         margin-top: 40px;
     }
 </style>
+<h1>Boots Table</h1>
 <div class="uper">
     @if(session()->get('success'))
     <div class="alert alert-success">
@@ -46,4 +47,4 @@
         </tbody>
     </table>
     <div>
-        @endsection
+@endsection

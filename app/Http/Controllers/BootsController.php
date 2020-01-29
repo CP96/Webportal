@@ -52,7 +52,7 @@ class BootsController extends Controller
             'rentalprice' => $request->get('rentalprice')
         ]);
         $boots->save();
-        return redirect('/boots')->with('success', 'Stock has been added');
+        return redirect('/boots')->with('success', 'Boots has been added');
     }
 
     /**

@@ -15,11 +15,11 @@ class CreateSkisTable extends Migration
     {
         Schema::create('skis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('Brand');
-            $table->string('Model');
-            $table->string('Type');
-            $table->integer('Lenght');
-            $table->float('Rental Price');
+            $table->string('brand');
+            $table->string('model');
+            $table->string('type');
+            $table->integer('length');
+            $table->float('rentalprice');
             $table->timestamps();
         });
     }

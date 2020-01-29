@@ -8,7 +8,7 @@
 </style>
 <div class="card uper">
     <div class="card-header">
-        Add Boots
+        Add Skiboots
     </div>
     <div class="card-body">
         @if ($errors->any())
@@ -21,26 +21,26 @@
         </div><br />
         @endif
 
-        <form method="post" action="{{ route('boots.store') }}">
+        <form method="post" action="{{ route('skiboots.store') }}">
             <div class="form-group">
                 @csrf
-                <label for="name">Brand:</label>
+                <label for="brand">Brand:</label>
                 <input type="text" class="form-control" name="brand" />
             </div>
             <div class="form-group">
-                <label for="price">Model:</label>
+                <label for="model">Model:</label>
                 <input type="text" class="form-control" name="model" />
             </div>
             <div class="form-group">
-                <label for="quantity">Type:</label>
+                <label for="type">Type:</label>
                 <input type="text" class="form-control" name="type" />
             </div>
             <div class="form-group">
-                <label for="quantity">Mondo Point:</label>
+                <label for="mondopoint">Mondo Point:</label>
                 <input type="text" class="form-control" name="mondopoint" />
             </div>
             <div class="form-group">
-                <label for="quantity">Rental Price:</label>
+                <label for="rentalprice">Rental Price:</label>
                 <input type="text" class="form-control" name="rentalprice" />
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
