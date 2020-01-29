@@ -22,7 +22,6 @@
                 <td>Type</td>
                 <td>Mondo Point</td>
                 <td>Rental Price</td>
-                <td colspan="2">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -34,14 +33,7 @@
                 <td>{{$boot->type}}</td>
                 <td>{{$boot->mondopoint}}</td>
                 <td>{{$boot->rentalprice}}</td>
-                <td><a href="{{ route('boots.edit',$boot->id)}}" class="btn btn-primary">Edit</a></td>
-                <td>
-                    <form action="{{ route('boots.destroy', $boot->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
-                </td>
+                
             </tr>
             @endforeach
         </tbody>

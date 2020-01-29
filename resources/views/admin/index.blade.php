@@ -3,12 +3,12 @@
 @section('content')
 
 <h1>Admin Page</h1>
-
+@include('partials.error')
 
 <h2>Skis Table</h2>
 <a class="btn btn-success" href="/skis/create">Add New</a>
 <div class="uper mb-5">
-    @include('partials.error')
+    
     <div class="shadow rounded">
         @if(count($skis) > 0 )
         <table class="table table-striped ">
@@ -57,7 +57,7 @@
 <h2>Snowboards Table</h2>
 <a class="btn btn-success" href="/snowboards/create">Add New</a>
 <div class="uper mb-5">
-    @include('partials.error')
+    
     <div class="shadow rounded">
         @if(count($snowboards) > 0 )
         <table class="table table-striped shadow rounded">
@@ -104,7 +104,7 @@
 <h2>Skiboots Table</h2>
 <a class="btn btn-success" href="/skiboots/create">Add New</a>
 <div class="uper mb-5">
-    @include('partials.error')
+    
     <div class="shadow rounded">
         @if(count($skiboots) > 0 )
         <table class="table table-striped shadow rounded">
@@ -150,7 +150,7 @@
 <h2>Boots Table</h2>
 <a class="btn btn-success" href="/boots/create">Add New</a>
 <div class="uper mb-5">
-    @include('partials.error')
+    
     <div class="shadow rounded">
         @if(count($boots) > 0 )
         <table class="table table-striped shadow rounded">

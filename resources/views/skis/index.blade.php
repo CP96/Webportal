@@ -22,7 +22,6 @@
                 <td>Type</td>
                 <td>Length</td>
                 <td>Rental Price</td>
-                <td colspan="2">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -34,14 +33,7 @@
                 <td>{{$ski->type}}</td>
                 <td>{{$ski->length}}</td>
                 <td>{{$ski->rentalprice}}</td>
-                <td><a href="{{ route('skis.edit',$ski->id)}}" class="btn btn-primary">Edit</a></td>
-                <td>
-                    <form action="{{ route('skis.destroy', $ski->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
-                </td>
+                
             </tr>
             @endforeach
         </tbody>

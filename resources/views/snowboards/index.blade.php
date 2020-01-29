@@ -22,7 +22,6 @@
                 <td>Type</td>
                 <td>Length</td>
                 <td>Rental Price</td>
-                <td colspan="2">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -34,14 +33,7 @@
                 <td>{{$snowboard->type}}</td>
                 <td>{{$snowboard->length}}</td>
                 <td>{{$snowboard->rentalprice}}</td>
-                <td><a href="{{ route('snowboards.edit',$snowboard->id)}}" class="btn btn-primary">Edit</a></td>
-                <td>
-                    <form action="{{ route('snowboards.destroy', $snowboard->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
-                </td>
+                
             </tr>
             @endforeach
         </tbody>

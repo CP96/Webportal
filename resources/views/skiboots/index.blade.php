@@ -22,7 +22,6 @@
                 <td>Type</td>
                 <td>Mondo Point</td>
                 <td>Rental Price</td>
-                <td colspan="2">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -34,14 +33,7 @@
                 <td>{{$skiboot->type}}</td>
                 <td>{{$skiboot->mondopoint}}</td>
                 <td>{{$skiboot->rentalprice}}</td>
-                <td><a href="{{ route('skiboots.edit',$skiboot->id)}}" class="btn btn-primary">Edit</a></td>
-                <td>
-                    <form action="{{ route('skiboots.destroy', $skiboot->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
-                </td>
+                
             </tr>
             @endforeach
         </tbody>
