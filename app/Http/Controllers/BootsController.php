@@ -52,7 +52,7 @@ class BootsController extends Controller
             'rentalprice' => $request->get('rentalprice')
         ]);
         $boots->save();
-        return redirect('/boots')->with('success', 'Boots has been added');
+        return redirect('/admin')->with('success', 'Boots has been added');
     }
 
     /**
@@ -104,7 +104,7 @@ class BootsController extends Controller
         $boot->rentalprice = $request->get('rentalprice');
         $boot->save();
 
-        return redirect('/boots')->with('success', 'Boot has been updated');
+        return redirect('/admin')->with('success', 'Boot has been updated');
     }
 
     /**
@@ -118,6 +118,6 @@ class BootsController extends Controller
         $boot = Boots::find($id);
         $boot->delete();
 
-        return redirect('/boots')->with('success', 'Boot has been deleted Successfully');
+        return redirect('/admin')->with('success', 'Boot has been deleted Successfully');
     }
 }

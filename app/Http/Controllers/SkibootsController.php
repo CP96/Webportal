@@ -52,7 +52,7 @@ class SkibootsController extends Controller
             'rentalprice' => $request->get('rentalprice')
         ]);
         $skiboot->save();
-        return redirect('/skiboots')->with('success', 'Skiboots has been added');
+        return redirect('/admin')->with('success', 'Skiboots has been added');
     }
 
     /**
@@ -104,7 +104,7 @@ class SkibootsController extends Controller
         $skiboot->rentalprice = $request->get('rentalprice');
         $skiboot->save();
 
-        return redirect('/skiboots')->with('success', 'Skiboot has been updated');
+        return redirect('/admin')->with('success', 'Skiboot has been updated');
     }
 
     /**
@@ -118,6 +118,6 @@ class SkibootsController extends Controller
         $skiboot = Skiboots::find($id);
         $skiboot->delete();
 
-        return redirect('/skiboots')->with('success', 'Skiboot has been deleted Successfully');
+        return redirect('/admin')->with('success', 'Skiboot has been deleted Successfully');
     }
 }

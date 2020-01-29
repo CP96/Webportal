@@ -52,7 +52,7 @@ class SnowboardsController extends Controller
             'rentalprice' => $request->get('rentalprice')
         ]);
         $snowboard->save();
-        return redirect('/snowboards')->with('success', 'Snowboard has been added');
+        return redirect('/admin')->with('success', 'Snowboard has been added');
     }
 
     /**
@@ -104,7 +104,7 @@ class SnowboardsController extends Controller
         $snowboard->rentalprice = $request->get('rentalprice');
         $snowboard->save();
 
-        return redirect('/snowboards')->with('success', 'Snowboard has been updated');
+        return redirect('/admin')->with('success', 'Snowboard has been updated');
     }
 
     /**
@@ -118,6 +118,6 @@ class SnowboardsController extends Controller
         $snowboard = Snowboards::find($id);
         $snowboard->delete();
 
-        return redirect('/snowboards')->with('success', 'Snowboard has been deleted Successfully');
+        return redirect('/admin')->with('success', 'Snowboard has been deleted Successfully');
     }
 }
