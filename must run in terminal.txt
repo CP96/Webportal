@@ -1,0 +1,2 @@
+npm run watch to run ui
+php artisan serve to run php

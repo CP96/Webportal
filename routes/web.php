@@ -20,3 +20,6 @@ Route::resource('snowboards', 'SnowboardsController');
 Route::resource('skiboots', 'SkibootsController');
 Route::resource('boots', 'BootsController');
 Route::resource('admin','AdminController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

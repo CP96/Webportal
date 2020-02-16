@@ -10,6 +10,17 @@ use App\Skiboots;
 
 class AdminController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +33,7 @@ class AdminController extends Controller
         $snowboards = Snowboards::all();
         $skiboots = Skiboots::all();
 
-        return view('admin.index', compact('boots','skis','snowboards','skiboots'));
+        return view('admin.index', compact('boots', 'skis', 'snowboards', 'skiboots'));
     }
 
     /**
